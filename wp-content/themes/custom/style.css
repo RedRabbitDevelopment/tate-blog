@@ -317,6 +317,9 @@ input[type="reset"]:active {
 .widget img {
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
 }
+.entry-content .recommendation-content {
+  margin-bottom: 0;
+}
 img[class*="align"],
 img[class*="wp-image-"],
 img[class*="attachment-"] {
@@ -1134,6 +1137,31 @@ article.format-quote .entry-content blockquote {
 	font-style: normal;
 	color: #6a6a6a;
 	background: #efefef;
+}
+article.type-recommendation {
+  border-bottom: 0;
+  margin-bottom: 0;
+  float: left;
+  width: 45%;
+  padding: 10px;
+}
+article.type-recommendation .recommendation-role {
+  font-style: italic;
+}
+.post-type-archive-recommendation .site-content,
+.post-type-archive-client .site-content {
+  width: 100%;
+}
+.client-logo h1 {
+  margin-bottom: 5px;
+}
+.client-logo {
+  display: inline-block;
+  width: 250px;
+  margin: 15px;
+}
+.client-logo img {
+  width: 100%;
 }
 
 /* Status posts */

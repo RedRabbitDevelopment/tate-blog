@@ -13,7 +13,7 @@ add_action('init', 'clients_register');
 function clients_register() {
  
 	$labels = array(
-		'name' => _x('My Clients', 'post type general name'),
+		'name' => _x('Clients', 'post type general name'),
 		'singular_name' => _x('Client', 'post type singular name'),
 		'add_new' => _x('Add New', 'client'),
 		'add_new_item' => __('Add New Client'),
@@ -36,7 +36,7 @@ function clients_register() {
  
 	register_post_type( 'client' , $args );
 	$labels = array(
-		'name' => _x('My Contributions', 'post type general name'),
+		'name' => _x('Contributions', 'post type general name'),
 		'singular_name' => _x('Contribution', 'post type singular name'),
 		'add_new' => _x('Add New', 'contribution'),
 		'add_new_item' => __('Add New Contribution'),
@@ -50,6 +50,7 @@ function clients_register() {
  
 	$args = array(
 		'labels' => $labels,
+    'public' => true,
 		'supports' => array('title','editor','thumbnail')
   );
 	register_post_type( 'contribution' , $args );
@@ -70,7 +71,7 @@ function clients_register() {
 	$args = array(
 		'labels' => $labels,
 		'public' => true,
-		'rewrite' => array('slug' => 'recommendationsssss'),
+		'rewrite' => array('slug' => 'recommendations'),
     'has_archive' => true,
 		'supports' => array('title','editor','thumbnail')
   );

@@ -35,5 +35,4 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 <?php remove_filter('the_content', 'quote'); ?>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

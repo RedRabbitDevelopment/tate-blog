@@ -1791,6 +1791,8 @@ img#wpstats {
 	}
 }
 
+/* Client Page */
+
 span.strong {
   font-weight: bold;
 }
@@ -1833,4 +1835,60 @@ span.strong {
 .contribution img {
   max-width: 80%;
   padding: 5px;
+}
+
+/* Home Page */
+.my-face {
+  float: left;
+}
+.my-description {
+  display: inline-block;
+  width: 50%;
+  padding-left: 15px;
+}
+.my-description h2 {
+  margin-bottom: 5px;
+}
+.my-description .description {
+  font-size: 9px;
+}
+.social-icons {
+  font-size: 2em;
+  position: relative;
+  left: -60px;
+  top: 17px;
+  line-height: 30px;
+}
+.social-icons a {
+  color: #9f9f9f;
+}
+.social-icons a:hover {
+  color: #0f3647;
+}
+
+.my-description .recommendations {
+  overflow: hidden;
+  width: 480px;
+  height: 222px;
+  font-size: 12px;
+}
+.my-description .recommendations-container {
+  position: relative;
+  -webkit-transition: 0.5s left;
+  -ms-transition: 0.5s left;
+  -moz-transition: 0.5s left;
+  -o-transition: 0.5s left;
+  transition: 0.5s left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+width: 9999999px;
+}
+.my-description .recommendation {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  float: left;
+  width: 480px;
+  height: 222px;
 }

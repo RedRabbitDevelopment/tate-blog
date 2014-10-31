@@ -32,7 +32,9 @@
       ?>
     </ul>
     <ul class="circles">
+      <?php foreach($recommendations as $recommendation): ?>
       <li class="circle"></li>
+      <?php endforeach; ?>
     </li>
   </div>
   <script type="text/javascript">
@@ -42,15 +44,38 @@
       initialize: function(slider) {
         this.slider = slider;
         this.ul = slider.children[0]
-        this.circles = slider.children[1];
+        this.circles = slider.children[1].children;
         this.li = this.ul.children
  
         // make <ul> as large as all <li>’s
         this.ul.style.width = (this.li[0].clientWidth * this.li.length) + 'px'
         this.ul.style.left = "0";
  
-        this.currentIndex = 0;
-        this.addClass(this.circles.children[this.currentIndex]);
+        this.setIndex(0);
+        this.setInterval();
+        [].forEach.call(this.circles, function(node) {
+          node.addEventListener('click', this.goToNode.bind(this, node));
+        }, this);
+      },
+
+      setIndex: function(index) {
+        if(this.currentIndex != null) {
+          this.removeClass(this.circles[this.currentIndex]);
+        }
+        this.currentIndex = index;
+        this.addClass(this.circles[this.currentIndex]);
+      },
+      setInterval: function() {
+        if(this.interval) clearInterval(this.interval);
+        this.interval = setInterval(this.goToNext.bind(this), 5000);
+      },
+
+      goToNode: function(node) {
+        var index = [].indexOf.call(this.circles, node);
+        if(-1 !== index) {
+          this.goTo(index);
+        }
+        this.setInterval();
       },
  
       goTo: function(index) {
@@ -63,15 +88,13 @@
         // move <ul> left
         this.ul.style.left = '-' + (100 * index) + '%'
  
-        this.removeClass(this.circles.children[this.currentIndex]);
-        this.currentIndex = index
-        this.addClass(this.circles.children[this.currentIndex]);
+        this.setIndex(index);
       },
  
       addClass: function(node) {
         var classes = node.className.split(' ');
         var index = classes.indexOf('active');
-        if(-1 !== index)
+        if(-1 === index)
           node.className += ' active';
       },
  

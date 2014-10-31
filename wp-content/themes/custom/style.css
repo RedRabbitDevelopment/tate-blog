@@ -1890,5 +1890,22 @@ width: 9999999px;
   width: 100%;
   float: left;
   width: 480px;
-  height: 222px;
+  height: 200px;
+}
+ul.circles {
+  list-style: none;
+  clear: both;
+}
+.circles .circle {
+  float: left;
+  width: 10px;
+  height: 10px;
+  border: 1px;
+  border-style: solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.circles .circle.active {
+  background-color: black;
+  cursor: inherit;
 }

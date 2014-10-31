@@ -119,7 +119,42 @@
 </div>
 <div class="front-page-clients">
   <h2>Check out my Past Work</h>
+  <ul>
+    <?php
+      $clients = get_posts(array(
+        'post_type' => 'client'
+      ));
+      global $post;
+      foreach($clients as $client):
+      $post = $client;
+      setup_postdata($client);
+      $screenshot = get_field('screenshot');
+    ?>
+      <li class="screenshot">
+        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+          <img src="<?php echo $screenshot['url']; ?>" alt="<?php echo $screenshot['alt'] ?>" alt="<?php the_title(); ?>" />
+        </a>
+      </li>
+      <?php
+      endforeach; 
+      wp_reset_postdata();
+      ?>
+    </ul>
 </div>
 <div class="front-page-clients">
-  <h2>Blog Posts</h>
+  <h2>Recent Blog Posts</h>
+  <?php
+    $posts = get_posts(array('post_type' => 'post'));
+    foreach($posts as $post):
+      setup_postdata($post);
+
+      /* Include the post format-specific template for the content. If you want to
+       * this in a child theme then include a file called called content-___.php
+       * (where ___ is the post format) and that will be used instead.
+       */
+      get_template_part( 'content', get_post_format() );
+
+    endforeach;
+    wp_reset_postdata();
+  ?>
 </div>

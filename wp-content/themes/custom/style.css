@@ -1909,3 +1909,9 @@ ul.circles {
   background-color: black;
   cursor: inherit;
 }
+.front-page-clients .screenshot {
+  list-style: none;
+  width: 260px;
+  padding: 10px;
+  display: inline-block;
+}

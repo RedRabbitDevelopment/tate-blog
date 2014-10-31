@@ -13,9 +13,6 @@
  */
 
 add_filter('the_content', 'quote');
-function quote($content) {
-  return "\"" . preg_replace('/<\/?p>/', '', $content) . "\"";
-}
 get_header(); ?>
 
 	<div id="primary" class="site-content">

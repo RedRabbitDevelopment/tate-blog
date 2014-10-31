@@ -529,8 +529,7 @@ a:hover {
 	background-color: #fff;
 }
 .site-content {
-	margin: 24px 0 0;
-	margin: 1.714285714rem 0 0;
+	margin: 0 0 24px;
 }
 .widget-area {
 	margin: 24px 0 0;
@@ -1505,6 +1504,7 @@ img#wpstats {
 		width: 65.104166667%;
 	}
 	body.template-front-page .site-content,
+	body.single-client .site-content,
 	body.attachment .site-content,
 	body.full-width .site-content {
 		width: 100%;
@@ -1789,4 +1789,48 @@ img#wpstats {
 		margin-left: 50px;
 		margin-left: 3.57142857rem;
 	}
+}
+
+span.strong {
+  font-weight: bold;
+}
+.content-client .role {
+  padding-bottom: 10px;
+}
+.content-client .screenshot {
+  text-align: center;
+  padding-bottom: 15px;
+}
+.content-client .screenshot img {
+  max-width: 80%;
+  padding-bottom: 15px;
+}
+.content-client .screenshot p {
+  max-width: 50%;
+  margin: 0 auto;
+}
+.content-client .technologies {
+  padding: 10px 0 0;
+}
+
+.content-client h2 {
+  padding: 15px 0;
+  font-size: 22px;
+}
+
+.recommendations .recommendation {
+  padding: 0 15% 10px;
+}
+.recommendations .from {
+  text-align: right;
+  padding-right: 15%;
+}
+
+.contribution {
+  text-align: center;
+  padding: 30px 5px;
+}
+.contribution img {
+  max-width: 80%;
+  padding: 5px;
 }

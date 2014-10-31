@@ -1,4 +1,8 @@
 <?php
+function quote($content) {
+  return "\"" . preg_replace('/<\/?p>/', '', $content) . "\"";
+}
+
 /**
  * Twenty Twelve functions and definitions
  *

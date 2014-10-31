@@ -439,6 +439,9 @@ function twentytwelve_body_class( $classes ) {
 		if ( is_active_sidebar( 'sidebar-2' ) && is_active_sidebar( 'sidebar-3' ) )
 			$classes[] = 'two-sidebars';
 	}
+	if ( is_page_template( 'page-templates/no-comments.php' ) ) {
+		$classes[] = 'template-no-comments';
+	}
 
 	if ( empty( $background_image ) ) {
 		if ( empty( $background_color ) )
